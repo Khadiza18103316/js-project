@@ -28,7 +28,7 @@
   </head>
   <body>
     <div class="light">
-        <h1>Light Off</h1>
+        <h1 id="title">Light Off</h1>
     </div>
     <img id="light1" src="off.png" width="130" height="200" alt="">
     <img id="light2" src="off.png" width="130" height="200" alt="">
@@ -45,16 +45,20 @@
 
     <script>
         function lightBtn(match){
+            var light= document.getElementById("title");
             var pic;
             for(var i=1; i<=5; i++){
               if(match==0){
                pic="off.png";  
+               light.innerHTML ="Light Off";
               }
               else{
                   pic="on.png";
+                  light.innerHTML ="Light On";
               }
               var light =document.getElementById('light' +(i)) ;
               light.src=pic; 
+              console.log(pic);
             }
         }
     </script>
