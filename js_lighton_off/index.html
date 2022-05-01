@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>on off</title>
+    <style>
+        .title{
+            text-align: center;
+        }
+        img{
+            margin-right: 60px;
+        }
+        #on{
+            background-color: red;
+            font-size: 1.4rem;
+            padding: 10px 20px;
+            color: white;
+        }
+        #off{
+            background-color: blue;
+            font-size: 1.4rem;
+            padding: 10px 20px;
+            color: white;
+        }
+        .btn{
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="light">
+        <h1>Light Off</h1>
+    </div>
+    <img id="light1" src="off.png" width="130" height="200" alt="">
+    <img id="light2" src="off.png" width="130" height="200" alt="">
+    <img id="light3" src="off.png" width="130" height="200" alt="">
+    <img id="light4" src="off.png" width="130" height="200" alt="">
+    <img id="light5" src="off.png" width="130" height="200" alt="">
+    <br>
+    <br>
+
+    <div class="btn">
+        <button id="on" onclick="lightBtn(1)">On</button>
+        <button id="off" onclick="lightBtn(0)">Off</button>
+    </div>
+
+    <script>
+        function lightBtn(match){
+            var pic;
+            for(var i=1; i<=5; i++){
+              if(match==0){
+               pic="off.png";  
+              }
+              else{
+                  pic="on.png";
+              }
+              var light =document.getElementById('light' +(i)) ;
+              light.src=pic; 
+            }
+        }
+    </script>
+  </body>
+</html>
