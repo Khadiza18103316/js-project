@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Photo Capture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <video id="webcam" autoplay="true">
+    </video>
+
+    <canvas id="canvas" width="700" height="700">
+    </canvas>
+
+    <button id="takePhoto">
+        Take Photo
+    </button>
+
+    <script>
+    var video = document.getElementById("webcam");
+    var camera = navigator.mediaDevices.getUserMedia;
+    if (camera) {
+        navigator.mediaDevices.getUserMedia({
+                video: true,
+                audio: true
+            })
+            .then(function(streamLive) {
+                video.scrObject = streamLive;
+            })
+            .catch(function(error) {
+                console.log("error please try again");
+            })
+    }
+    var canvas = document.getElementById("canvas");
+    var takePhoto = document.getElementById("takePhotp");
+    var context = canvas.getContext('2d');
+    takePhoto.addEventListener('click', function() {
+        context.drawImage(video, 0, 0, 700, 700);
+    })
+    </script>
+
+</body>
+
+</html>
