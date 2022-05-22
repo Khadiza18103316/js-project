@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Car Running</title>
+    <style>
+        button{
+            background-color: blue;
+            padding: 10px 20px;
+            font-size: 1.3rem;
+            color: wheat;
+        }
+    </style>
+  </head>
+  <body>
+      <br>
+      <button id="start">Start</button>
+      <button id="stop">Stop</button><br><br>
+      <div class="img-div">
+          <img id="carImg" src="car.jpg" width="100" alt="Car">
+      </div>
+
+      <script>
+          var carImg = document.getElementById("carImg");
+          var carStrat;
+          var start = document.getElementById("start");
+          var stop = document.getElementById("stop");
+
+          var m = 0;
+          start.addEventListener('click', function(){
+              carStrat = setInterval(run,100);
+
+              function run(){
+                  if(m==1300){
+                      clearInterval(carStrat);
+                      m=0;
+                  }else{
+                      m+=10;
+                      console.log(m);
+                      carImg.style.marginLeft=m+'px';
+
+                  }
+              }
+          })
+
+          stop.addEventListener('click', function(){
+            clearInterval(carStrat);
+          })
+
+
+          
+      </script>
+    
+  </body>
+</html>
