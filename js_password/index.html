@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JS Password</title>
+  </head>
+  <body>
+      <form action="">
+          <input type="password" name="password" id="password"><br><br>
+          <input type="checkbox" onclick="mypass()">Show Password
+      </form>
+
+      <script>
+          var pass = document.getElementById("password");
+          function mypass(){
+              if(pass.type=="password"){
+                  pass.type ="text";
+              }else{
+                pass.type ="password";
+              }
+          }
+      </script>
+    
+  </body>
+</html>
